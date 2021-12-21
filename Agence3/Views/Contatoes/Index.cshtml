@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Agence3.Models.Contato>
+
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h1 class="titulo">Cadastro contato</h1>
+
+<br>
+
+<P align="justify" class="texto">
+  Aqui o cliente poderá entrar em contato através do seu e-mail, não precisará fazer qualquer tipo de cadastro.
+</P>
+<br>
+
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-warning">Cadastrar novo contato</button></a>
+</p>
+<br>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDcontato">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IDcontato">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDcontato">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

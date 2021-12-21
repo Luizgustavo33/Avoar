@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Agence3.Models.Viagem>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="titulo">Cadastro viagem</h1>
+
+<br>
+
+<P align="justify" class="texto">
+Aqui será cadastradas as viagens disponíveis para os nossos passageiros.</P>
+<br>
+
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-warning">Cadastrar nova viagem</button></a>
+</p>
+<br>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Embarque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Destino)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data_Embarque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preço)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Embarque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Destino)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data_Embarque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preço)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDviagem">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IDviagem">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDviagem">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

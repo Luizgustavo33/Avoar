@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Agence3.Models.Promoções>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="titulo">Cadastro promoção</h1>
+
+<br>
+
+<P align="justify" class="texto">
+Se caso surgir algum imprevisto, bônus, cupom, será aqui que será feito a implementação desta promoção/desconto.</P>
+<br>
+
+
+<p>
+    <a asp-action="Create"><button type="button" class="btn btn-warning">Cadastrar nova promoção</button></a>
+</p>
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Viagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Preço_desconto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Viagem.Data_Embarque)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Preço_desconto)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IDPromoc">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.IDPromoc">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.IDPromoc">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

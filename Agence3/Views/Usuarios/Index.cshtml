@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Agence3.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="titulo">Cadastro cliente</h1>
+
+<br>
+
+<div class="container">
+ 
+
+  
+            <P align="justify" class="texto">
+                Aqui é feito o cadastro dos clientes em nosso sistema, sugiro que averigue as viagens disponiveis primeiro antes de qualquer coisa.
+            </P>
+        
+</div>
+
+<br>
+            <p>
+                <a asp-action="Create"><button type="button" class="btn btn-warning">Cadastrar novo usuário</button></a>            </p>
+            <br>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Nome)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Idade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.CPF)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Endereco)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Viagem)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Nome)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Idade)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.CPF)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Endereco)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Viagem.Data_Embarque)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
