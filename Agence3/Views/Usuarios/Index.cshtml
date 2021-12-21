@@ -67,12 +67,12 @@
                                 @Html.DisplayFor(modelItem => item.Email)
                             </td>
                             <td>
-                                @Html.DisplayFor(modelItem => item.Viagem.Data_Embarque)
+                                @Html.DisplayFor(modelItem => item.Viagem.IDviagem)
                             </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+                                <a asp-action="Edit" asp-route-id="@item.ID"><button type="button" class="btn btn-primary">Editar</button></a>
+                                <a asp-action="Details" asp-route-id="@item.ID"><button type="button" class="btn btn-info">Detalhes</button></a>
+                                <a asp-action="Delete" asp-route-id="@item.ID"><button type="button" class="btn btn-danger">Deletar</button></a>
                             </td>
                         </tr>
                     }

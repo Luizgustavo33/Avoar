@@ -53,9 +53,9 @@ Aqui será cadastradas as viagens disponíveis para os nossos passageiros.</P>
                     @Html.DisplayFor(modelItem => item.Preço)
                 </td>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.IDviagem">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.IDviagem">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.IDviagem">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.IDviagem"><button type="button" class="btn btn-primary">Editar</button></a>
+                    <a asp-action="Details" asp-route-id="@item.IDviagem"><button type="button" class="btn btn-info">Detalhes</button></a>
+                    <a asp-action="Delete" asp-route-id="@item.IDviagem"><button type="button" class="btn btn-danger">Deletar</button></a>
                 </td>
             </tr>
         }
